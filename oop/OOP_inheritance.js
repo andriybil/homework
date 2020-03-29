@@ -20,11 +20,11 @@ class Worker {
 }
 var worker = new Worker("John", "Doe", 10, 31);
 
-console.log(worker.name); //выведет 'John'
-console.log(worker.surname); //выведет 'Doe'
-console.log(worker.rate); //выведет 10
-console.log(worker.days); //выведет 31
-console.log(worker.getSalary()); //выведет 310 - то есть 10*31
+// console.log(worker.name); //выведет 'John'
+// console.log(worker.surname); //выведет 'Doe'
+// console.log(worker.rate); //выведет 10
+// console.log(worker.days); //выведет 31
+// console.log(worker.getSalary()); //выведет 310 - то есть 10*31
 
 /***************************************************************************************************************************/
 
@@ -68,13 +68,13 @@ console.log(worker.getSalary()); //выведет 310 - то есть 10*31
    }
  }
 
-var student = new Student("Petro", "Salivan", 2021);
+var student = new Student("Petro", "Salivan", 2020);
 
-console.log(student.name); //выведет 'Petro'
-console.log(student.surname); //выведет 'Salivan'
-console.log(student.getFullName()); //выведет 'Petro Salivan'
-console.log(student.year); //выведет 2017
-console.log(student.getCourse()); //выведет 3 - третий курс, так как текущий год 2020
+// console.log(student.name); //выведет 'Petro'
+// console.log(student.surname); //выведет 'Salivan'
+// console.log(student.getFullName()); //выведет 'Petro Salivan'
+// console.log(student.year); //выведет 2017
+// console.log(student.getCourse()); //выведет 3 - третий курс, так как текущий год 2020
 
 
 /***************************************************************************************************************************/
@@ -83,16 +83,15 @@ console.log(student.getCourse()); //выведет 3 - третий курс, т
  */
 
 function Worker1(name, surname, rate, days) {
-  
   this.name = name;
   this.surname = surname;
   this.rate = rate;
-  this.days = days;
-  
-  this.getSalary = () => {
-    return this.rate * this.days;
-  }
+  this.days = days;  
 }
+Worker1.prototype.getSalary = function () {
+  return this.rate * this.days;
+}
+
 var worker1 = new Worker1("Иван", "Иванов", 10, 31);
 
 console.log(worker1.name); //выведет 'Иван'
@@ -102,27 +101,22 @@ console.log(worker1.days); //выведет 31
 console.log(worker1.getSalary()); //выведет 310 - то есть 10*31
 
 function User1(name, surname) {
-
   this.name = name;
   this.surname = surname;
-  
-  this.getFullName = () => {
-    return `${this.name} ${this.surname}`;
-  }
 }
 
+User1.prototype.getFullName = function () {
+  return `${this.name} ${this.surname}`;
+} 
+
 function Student1 (name, surname, year) {
-
   User1.call(this, name, surname); 
-  // OR User1.apply(this, [name, surname]);
-  // OR User1.apply(this, arguments);
-
   this.year = year;
-  
+}
 
-  this.getCourse = () => {
-   return new Date().getFullYear() - this.year;
-  }
+Student1.prototype = new User1;
+Student1.prototype.getCourse = function ()  {
+  return new Date().getFullYear() - this.year;
 }
 
 var student1 = new Student1("Иван", "Иванов", 2017);
@@ -166,8 +160,8 @@ let pockets = {
 // bed.__proto__ = table;
 // pockets.__proto__ = bed;
 
-console.log(pockets.pen);
-console.log(bed.glasses);
+// console.log(pockets.pen);
+// console.log(bed.glasses);
 
 /**
  * Ответьте на вопрос: как быстрее получить значение glasses – через pockets.glasses или через head.glasses?
