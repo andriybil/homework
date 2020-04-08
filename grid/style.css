@@ -1,0 +1,128 @@
+body {
+  font-family: 'Comic Neue';
+  font-size: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-areas:
+  "header header header header"
+  "main main none sidebar"
+  "footer footer footer footer";
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 420px;
+  height: 280px;
+}
+
+header, main, aside, footer {
+  border: 2px solid grey;
+  border-radius: 10px;
+  padding-top: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin: 2px;
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.26);
+
+}
+
+.empty {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.header {
+  grid-area: header;
+  background: #f79328;
+}
+
+.main {
+  grid-area: main;
+  background: #41bfe6;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #ed7271;
+}
+
+.footer {
+  grid-area: footer;
+  background: #73c575;
+}
+
+
+.grid1 {
+  margin-top: 20px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 2fr;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 450px;
+  height: 160px;
+}
+
+.grid1 > div {
+  display: inherit;
+  justify-items: center;
+  border: 1px solid black;
+}
+
+.grid1 > div > div {
+  background: #f79328;
+  margin: 3px 0;
+  border-radius: 5px;
+  width: 60%;
+  border: 1px solid #de8b2b;
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.26);
+}
+
+.grid2 {
+  margin-top: 20px;
+  display: grid;
+  grid-template-areas: 
+  "item-a item-b item-c item-d item-e"
+  "item-a none none none item-e";
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 450px;
+  height: 160px;
+  text-align: center;
+}
+.grid2:only-child {
+  background:1px solid grey;
+}
+
+.grid2 > div {
+  margin: 2px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding-top: 20px;
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.26);
+}
+
+.item-a {
+  grid-area: item-a;
+  background: #f79328;
+}
+.item-b {
+  grid-area: item-b;
+  background: #41bfe6;
+}
+.item-c {
+  grid-area: item-c;
+  background: #ed7271;
+}
+.item-d {
+  grid-area: item-d;
+  background: #73c575;
+}
+.item-e {
+  grid-area: item-e;
+  background: #e18ce9;
+}

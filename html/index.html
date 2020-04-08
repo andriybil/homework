@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML_from_list_table</title>
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    text-align: center;
+    width: 700px;
+    margin: auto;">
+  <header style="border: 4px solid black;">Header</header>
+  <main style="width: 500px; margin: auto;">
+    <section>
+      <h3 style="margin: 20px 0 0; font-weight: normal;">Table</h3>
+      <p style="margin: 0px;">Видобуток дорогоцінного каміння</p>
+      <table style="text-align: left;" border="1" width="100%">
+        <tr>
+          <th></th>
+          <th>2010</th>
+          <th>2012</th>
+          <th>2014</th>
+        </tr>
+        <tr>
+          <td>Сапфіри</td>
+          <td rowspan="2">1483</td>
+          <td>4532</td>
+          <td>6743</td>
+        </tr>
+        <tr>
+          <td>Рубіни</td>
+          <td>3835</td>
+          <td>7482</td>
+        </tr>
+        <tr>
+          <td>Алмази</td>
+          <td>683</td>
+          <td colspan="2">238</td>
+        </tr>
+      </table>
+    </section>
+    <section style="text-align: center;">
+      <h3 style="margin: 20px 0 0; font-weight: normal;">List</h3>
+      <p style="margin: 5px;">Перший список починається з 1</p>
+      <ol style="text-align: left; list-style-type: decimal-leading-zero;
+          margin-left: 100px;">
+        <li>Баал</li>
+        <li>Агарес</li>
+        <li>Марбас</li>
+        <li>Пруфлас</li>
+        <li>Аамон</li>
+      </ol>
+      <p>Другий список починається з 6</p>
+      <ol style="text-align: left; list-style-type: decimal-leading-zero;
+          margin-left: 100px;" start="6">
+        <li>Барбатос</li>
+        <li>Буер</li>
+        <li>Гасион</li>
+        <li>Ботис</li>
+      </ol>
+    </section>
+    <section style="height: 280px;
+        background: #3191d0;
+        color: #fff;
+        text-align: left;
+        font-size: 18px;
+        margin: auto;">
+      <h3 style="margin: 0; padding: 20px 20px 0 20px; font-size: 25px;">Реєстрація</h3>
+      <hr>
+      <form style="padding: 20px; width: 320px;" id="registrationForm">
+        <label for="email">E-mail</label>
+        <input style="width: 310px;" type="email" name="email" id="email">
+        <div style="display: flex; width: 100%; margin-top: 20px;
+            justify-content: space-between;">
+          <div style="width: 155px;">
+            <label for="password">Пароль</label>
+            <input type="password" name="password" id="password">
+          </div>
+          <div style="width: 155px;">
+            <label for="confirmPassword">Ще раз</label>
+            <input type="password" name="confirmPassword" id="confirmPassword">
+          </div>
+        </div>
+        <button style="background: #fce081; padding: 5px; border: none;
+            margin: 30px 0;" type="submit" form="registrationForm" name="submit">Відправити</button>
+      </form>
+    </section>
+  </main>
+
+  <footer style="
+      border: 4px solid black;
+      text-align: center;
+      margin-top: 20px;">Footer</footer>
+</body>
+
+</html>
