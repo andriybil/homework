@@ -1,0 +1,37 @@
+h1::first-letter {
+  color: red;
+}
+
+p::first-line {
+  color: red ;
+  font-size: 15px;
+}
+
+
+a:nth-of-type(1), a:nth-of-type(2) {
+  display: flex;
+  width: 120px;
+  height: 100px;
+  margin: 10px;
+  align-items: center;
+  background: yellow;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+}
+
+a:nth-of-type(1):hover {
+  background: aqua;
+}
+
+a:nth-of-type(2):active {
+  background: darkgreen;
+}
+
+a:nth-of-type(3) {
+  text-decoration: none;
+}
+
+a:nth-of-type(3):visited {
+  color: red;
+}
